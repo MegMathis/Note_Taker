@@ -1,13 +1,13 @@
 const util = require("util");
 const fs = require("fs");
 
-// This package will be used to generate our unique ids. https://www.npmjs.com/package/uuid
+// unique id package
 const uuidv1 = require("uuid/v1");
 
 const readFileAsync = util.promisify(fs.readFile);
 const writeFileAsync = util.promisify(fs.writeFile);
 
-class Store {
+class StoreNotes {
   read() {
     return readFileAsync("db/db.json", "utf8");
   }
@@ -19,8 +19,6 @@ class Store {
   getNotes() {
     return this.read().then((notes) => {
       let parsedNotes;
-
-      // If notes isn't an array or can't be turned into one, send back a new empty array
       try {
         parsedNotes = [].concat(JSON.parse(notes));
       } catch (err) {
@@ -35,13 +33,13 @@ class Store {
     const { title, text } = note;
 
     if (!title || !text) {
-      throw new Error("Note 'title' and 'text' cannot be blank");
+      throw new Error("You need a title and text.  Cannot be blank");
     }
 
-    // Add a unique id to the note using uuid package
+    // UUID package
     const newNote = { title, text, id: uuidv1() };
 
-    // Get all notes, add the new note, write all the updated notes, return the newNote
+    // Get them all, add, updated, give back
     return this.getNotes()
       .then((notes) => [...notes, newNote])
       .then((updatedNotes) => this.write(updatedNotes))
@@ -49,11 +47,11 @@ class Store {
   }
 
   removeNote(id) {
-    // Get all notes, remove the note with the given id, write the filtered notes
+    // Get all, remove, writefiltered
     return this.getNotes()
       .then((notes) => notes.filter((note) => note.id !== id))
       .then((filteredNotes) => this.write(filteredNotes));
   }
 }
 
-module.exports = new Store();
+module.exports = new StoreNotes();
