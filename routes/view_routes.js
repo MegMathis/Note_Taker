@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 
-// notes.html
+// notes.jtml
 router.get("/notes", (client_request, server_response) => {
   server_response.sendFile(path.join(__dirname, "../public/notes.html"));
 });
