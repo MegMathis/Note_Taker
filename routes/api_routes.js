@@ -18,7 +18,7 @@ router.post("/notes", (client_request, server_response) => {
     .catch((err) => server_response.status(500).json(err));
 });
 
-// Delete notes
+// Delete notes? works?
 router.delete("/notes/:id", (client_request, server_response) => {
   store
     .removeNote(client_request.params.id)
