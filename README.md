@@ -54,7 +54,9 @@ n/a
 
 ## Links to Deployment
 
-https://github.com/MegMathis/README_Generator
+https://github.com/MegMathis/Note_Taker
+
+https://dashboard.heroku.com/apps/note-taker-by-meg/deploy/heroku-git
 
 ## Credits
 
