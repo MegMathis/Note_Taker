@@ -40,11 +40,13 @@ MIT
 
 ## ScreenShots
 
-![Screenshot.](./images/node_index_js.png)
-![Screenshot.](./images/promps.png)
-![Screenshot.](./images/license_options.png)
-![Screenshot.](./images/clicking_readme.png)
-![Screenshot.](./images/refresh_preview.png)
+![Screenshot.](./images/landing_page.png)
+
+![Screenshot.](./images/note_page.png)
+
+![Screenshot.](./images/typed_note.png)
+
+![Screenshot.](./images/saved_note.png)
 
 ## Video
 
