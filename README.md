@@ -56,7 +56,7 @@ n/a
 
 https://github.com/MegMathis/Note_Taker
 
-https://dashboard.heroku.com/apps/note-taker-by-meg/deploy/heroku-git
+https://note-taker-by-meg.herokuapp.com/notes
 
 ## Credits
 
